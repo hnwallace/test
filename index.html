@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Tyler ⚾</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", Arial, sans-serif;
+        background: radial-gradient(circle at top, #0c0c0c, #000000);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 90%;
+        animation: fadeIn 1.3s ease forwards;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 600;
+        opacity: 0;
+        animation: fadeIn 1.8s ease 0.2s forwards;
+        color: #f1f1f1;
+        text-shadow: 0 0 12px rgba(255,255,255,0.35);
+    }
+
+    .button {
+        margin-top: 30px;
+        padding: 14px 36px;
+        font-size: 1.25rem;
+        border-radius: 40px;
+        background: #1d1d1d;
+        color: #ffddd6;
+        border: 2px solid #b3261e;
+        cursor: pointer;
+        box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+        transition: 0.25s ease;
+    }
+
+    .button:hover {
+        transform: scale(1.06);
+        background: #2a2a2a;
+        box-shadow: 0 0 18px rgba(255, 0, 0, 0.45);
+    }
+
+    .message, .warning {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .message {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-top: 30px;
+        color: #ffe7e2;
+        text-shadow: 0 0 14px rgba(255, 210, 210, 0.4);
+    }
+
+    .warning {
+        margin-top: 20px;
+        font-size: 1.35rem;
+        color: #ffb3ae;
+        text-shadow: 0 0 10px rgba(255,180,180,0.35);
+        font-style: italic;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Hey Tyler ⚾</h1>
+
+    <button id="surpriseBtn" class="button">
+        Step Up to the Plate 🧢
+    </button>
+
+    <div id="message" class="message">
+        I love you.<br>
+        <span style="font-size: 1.45rem; opacity: 0.9;">
+            You’re the best pitch life ever threw me.
+        </span>
+    </div>
+
+    <div id="warning" class="warning">
+        Babe you really shouldn’t click random links people send you.<br>
+        You’re lucky I’m only here to steal your heart 😛
+    </div>
+</div>
+
+<script>
+    const btn = document.getElementById("surpriseBtn");
+    const message = document.getElementById("message");
+    const warning = document.getElementById("warning");
+
+    btn.addEventListener("click", () => {
+        btn.style.opacity = "0";
+        btn.style.pointerEvents = "none";
+
+        // Romantic message first
+        setTimeout(() => {
+            message.style.opacity = "1";
+            message.style.transform = "translateY(0)";
+        }, 450);
+
+        // Funny message later
+        setTimeout(() => {
+            warning.style.opacity = "1";
+            warning.style.transform = "translateY(0)";
+        }, 2500);
+    });
+</script>
+
+</body>
+</html>
